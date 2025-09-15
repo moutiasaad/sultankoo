@@ -1,0 +1,108 @@
+name: sultankoo
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+6
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # Cupertino Icons.
+  cupertino_icons: ^1.0.8
+  # For adapting screen and font size.
+  flutter_screenutil: ^5.9.3
+  # An SVG rendering and widget library, which allows painting.
+  flutter_svg: ^2.0.17
+  # Splash screen.
+  flutter_native_splash: ^2.4.5
+  # reading and writing simple key-value pairs
+  shared_preferences: ^2.5.2
+  # provides API to store data in secure storage.
+  flutter_secure_storage: ^9.2.4
+  # Dependency injection.
+  get_it: ^8.0.3
+  # Networking.
+  dio: ^5.8.0+1 
+  retrofit: ^4.4.2
+  retrofit_generator: ^9.1.9
+  pretty_dio_logger: ^1.4.0
+  # Automatically generate code for converting to and from JSON by annotating Dart classes.
+  json_serializable: ^6.8.0
+  json_annotation: ^4.9.0
+  # State management.
+  flutter_bloc: ^9.1.0
+  # Contains code to deal with internationalized/localized messages, date and number formatting and parsing...
+  intl: ^0.20.2
+  # Load and cache network images.
+  flutter_cache_manager: ^3.4.1
+  cached_network_image: ^3.4.1
+  # Shimmer effect.
+  shimmer: ^3.0.0
+  # Provides a collection of Flutter grids layouts (staggered, masonry, quilted, woven, etc.).
+  flutter_staggered_grid_view: ^0.7.0
+  # Showing the In-App Review/System Rating pop up.
+  in_app_review: ^2.0.9
+  # Sharing content via the platform share UI.
+  share_plus: ^10.1.4
+  # Custom Animations.
+  lottie: ^3.3.1
+  # Provides a WebView widget backed by the system webview.
+  webview_flutter: ^4.10.0
+  # Show toast and notification messages.
+  toastification: ^3.0.2
+  # Rendering static HTML and CSS as Flutter widgets.
+  flutter_html: ^3.0.0
+  # Huge icons.
+  hugeicons: ^0.0.10
+  # Declarative routing for Flutter
+  go_router: ^13.2.0
+  # A customised Flutter TextFormField to input international phone number along with country code.
+  intl_phone_field: ^3.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  # To encourage good coding practices. The lint set provided by the package is
+  flutter_lints: ^5.0.0
+  # A build system for Dart code generation and modular compilation.
+  build_runner: ^2.4.15
+  # To change app's launcher icon.
+  flutter_launcher_icons: ^0.14.3
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/images/logo.png"
+  image_path_ios: "assets/images/logo.png"
+  adaptive_icon_background: "#0D0027"
+  adaptive_icon_foreground: "assets/images/logo_foreground.png"
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/fonts/
+
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/cairo_regular.ttf
+          weight: 400
+        - asset: assets/fonts/cairo_medium.ttf
+          weight: 500
+        - asset: assets/fonts/cairo_semiBold.ttf
+          weight: 600
+        - asset: assets/fonts/cairo_bold.ttf
+          weight: 700
+        - asset: assets/fonts/cairo_extraBold.ttf
+          weight: 800
