@@ -20,4 +20,5 @@ class Routes {
   static const String orderDetails = '/order_details';
 
   static const String account = 'account';
+  static const String orderTracking = '/order_tracking';
 }

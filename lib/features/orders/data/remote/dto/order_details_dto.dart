@@ -26,6 +26,8 @@ class OrderDetailsDto {
   final PaymentMethodDto? paymentMethod;
   @JsonKey(name: 'tracking_number')
   final String? trackingNumber;
+  @JsonKey(name: 'tracking_link')
+  final String? tracking_link;
   final int? status;
   final String? currency;
   @JsonKey(name: 'discount_amount')
@@ -43,6 +45,7 @@ class OrderDetailsDto {
     this.isPaid,
     this.paymentMethod,
     this.trackingNumber,
+    this.tracking_link,
     this.status,
     this.currency,
     this.discountAmount,
@@ -64,6 +67,7 @@ class OrderDetailsDto {
       isPaid: isPaid,
       paymentMethod: paymentMethod?.toPaymentMethod(),
       trackingNumber: trackingNumber,
+      tracking_link:tracking_link,
       status: status,
       currency: currency,
       discountAmount: discountAmount,

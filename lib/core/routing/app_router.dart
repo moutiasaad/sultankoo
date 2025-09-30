@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:sultankoo/features/orders/presentation/screens/order_tracking_web_view.dart';
 
 import '../../features/authentication/presentation/controller/auth_cubit.dart';
 import '../../features/authentication/presentation/screens/sign_in_screen.dart';
@@ -216,6 +217,13 @@ final router = GoRouter(
     GoRoute(
       path: Routes.privacyPolicy,
       builder: (context, state) => const PrivacyPolicyScreen(),
+    ),
+    GoRoute(
+      path: Routes.orderTracking,
+      builder: (context, state) {
+        final url = state.extra as String;    // we’ll pass it as extra
+        return OrderTrackingWebView(url: url);
+      },
     ),
   ],
 );

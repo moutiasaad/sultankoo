@@ -5,6 +5,7 @@ class OrderDetails {
   final int? isPaid;
   final PaymentMethod? paymentMethod;
   final String? trackingNumber;
+  final String? tracking_link;
   final int? status;
   final String? currency;
   final double? discountAmount;
@@ -19,6 +20,7 @@ class OrderDetails {
     this.isPaid,
     this.paymentMethod,
     this.trackingNumber,
+    this.tracking_link,
     this.status,
     this.currency,
     this.discountAmount,

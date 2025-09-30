@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:sultankoo/core/routing/routes.dart';
 
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/styles.dart';
 import '../../../../core/utils/spacing.dart';
+import '../../../../core/widgets/app_text_button.dart';
 import '../../../../core/widgets/cached_network_image.dart';
 import '../../domain/model/order_details.dart';
 
@@ -35,7 +38,6 @@ class OrderDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final (statusText, statusColor) = _getStatusInfo(order.status);
-
     return SingleChildScrollView(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
       child: Column(
@@ -45,6 +47,30 @@ class OrderDetailsView extends StatelessWidget {
           _buildOrderSummaryCard(statusText, statusColor),
           _buildClientInfoCard(),
           _buildItemsList(context),
+          if (order.trackingNumber != null)
+            Align(
+              alignment: Alignment.centerRight,
+              child: SizedBox(
+                height: 45.h,
+                child: AppTextButton(
+                  onPressed: () {
+                    final url = order.trackingNumber!;
+                    print("urllllllllllllllllllllllllllllllllllllll"+url);
+                    // Optional: basic safety check
+                    if (Uri.tryParse(url)?.hasAbsolutePath ?? false) {
+                      context.push(Routes.orderTracking, extra: url);
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('رابط التتبع غير صالح')),
+                      );
+                    }
+                  },
+                  buttonText: 'تتبع الشحنة',
+                  buttonWidth: 150.w,
+                  textStyle: TextStyles.font14WhiteBold,
+                ),
+              ),
+            ),
           _buildPaymentDetailsCard(),
         ],
       ),
@@ -96,8 +122,8 @@ class OrderDetailsView extends StatelessWidget {
             'الإجمالي',
             '${order.totalPrice?.toStringAsFixed(2) ?? '0.00'} ${order.currency ?? ''}',
           ),
-          if (order.trackingNumber != null)
-            _buildDetailRow('رقم التتبع', order.trackingNumber!),
+          // if (order.trackingNumber != null)
+          //   _buildDetailRow('رقم التتبع', order.trackingNumber!),
         ],
       ),
     );
