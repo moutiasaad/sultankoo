@@ -88,7 +88,10 @@ class HomeBlocConsumer extends StatelessWidget {
                 ctx.read<CategoriesRepo>(),   // requires a RepositoryProvider<CategoriesRepo> above
               )..getCategoryProducts(categoryId),
               child:
-              SubCategoriesListView(categories: subCategories),
+              SubCategoriesListView(
+                categories: subCategories,
+                allCategories: categories,
+              ),
             ),
           );
         }),

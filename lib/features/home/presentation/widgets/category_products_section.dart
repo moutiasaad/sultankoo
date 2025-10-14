@@ -36,7 +36,10 @@ class CategoryProductsSection extends StatelessWidget {
             child: Text('الأقسام', style: TextStyles.font18BlackBold),
           ),
           verticalSpace(16),
-          SubCategoriesListView(categories: subCategories),
+          SubCategoriesListView(
+            categories: subCategories,
+            allCategories: categories,
+          ),
           verticalSpace(24),
         ],
         const CategoryProductsBlocConsumer(),

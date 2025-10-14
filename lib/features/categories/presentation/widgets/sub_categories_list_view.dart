@@ -5,9 +5,14 @@ import '../../../home/domain/model/category.dart';
 import 'sub_categories_list_view_item.dart';
 
 class SubCategoriesListView extends StatelessWidget {
-  const SubCategoriesListView({super.key, required this.categories});
+  const SubCategoriesListView({
+    super.key,
+    required this.categories,
+    required this.allCategories,
+  });
 
   final List<Category> categories;
+  final List<Category> allCategories;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +29,7 @@ class SubCategoriesListView extends StatelessWidget {
         final category = categories[index];
         return SubCategoriesListViewItem(
           category: category,
-          categories: categories,
+          allCategories: allCategories,
         );
       },
     );

@@ -10,11 +10,11 @@ class SubCategoriesListViewItem extends StatelessWidget {
   const SubCategoriesListViewItem({
     super.key,
     required this.category,
-    required this.categories,
+    required this.allCategories,
   });
 
   final Category category;
-  final List<Category> categories;
+  final List<Category> allCategories;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class SubCategoriesListViewItem extends StatelessWidget {
               path: '${Routes.categories}/${Routes.categoryProducts}',
               queryParameters: {'categoryId': category.id.toString()},
             ).toString(),
-            extra: categories,
+            extra: allCategories,
           ),
       child: SizedBox(
         width: 80.w,
